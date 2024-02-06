@@ -75,3 +75,87 @@ function longestWord(sentence) {
 const statement2='I am learning Programming to become a programmer'
 const longWord= longestWord(statement2);
 console.log('the largest word of the string **',statement2,'** is',longWord);
+    
+
+//TASK 05
+console.log('==========Find the lowest number in the array below.==========')
+
+function findLowest(heights) {
+    let lowHeight=heights[0];
+    for(const height of heights){
+        if (height < lowHeight) {
+            lowHeight=height;
+        }
+    }
+    return lowHeight;
+}
+
+const heights2 = [167, 190, 120, 165, 137,111]; //enter your height array
+
+const lowestHeight=findLowest(heights2);
+console.log('the lowest height is',lowestHeight);
+
+//TASK 06
+console.log('==========Find the friend with the smallest name.==========')
+
+function smallestName(names) {
+    let smName=names[0];
+    for (let i = 1; i < names.length; i++) {
+        if (smName.length>names[i].length) {
+            smName = names[i];
+        }
+    }
+    return smName;
+}
+
+const namesArray = ['rahim', 'robin', 'rafi', 'ron', 'rashed','a'];
+
+const smallName=smallestName(namesArray);
+console.log('the smallest name is',smallName);
+
+//TASK 07
+console.log('==========Your task is to calculate the total budget required to buy electronics:==========')
+
+function calculateElectronicsBudget(reqLaptop,reqTablet,reqMobile) {
+    //unit price
+    const indiLaptop = 35000;
+    const indiTablet = 15000;
+    const indiMobile = 20000;
+
+    const totalLaptopPrice=indiLaptop*reqLaptop;
+    const totalTabletPrice=indiTablet*reqTablet;
+    const totalMobilePrice=indiMobile*reqMobile;
+    
+    const totalPrice=totalLaptopPrice+totalMobilePrice+totalTabletPrice;
+    
+    return totalPrice;
+}
+
+const totalBudget= calculateElectronicsBudget(1,5,1)
+console.log('the total budget is',totalBudget);
+
+
+//TASK 07
+console.log('==========average of phone price==========')
+
+function priceAverage(phones){
+    let averagePrice=0;
+    let sumPrice=0;
+    for(const phone of phones){
+        sumPrice+=phone.price;
+    }
+    averagePrice=sumPrice/phones.length;
+    return averagePrice;
+}
+
+const phones = [
+    { model: "PhoneA", brand: "Iphone", price: 95000 },
+    { model: "PhoneB", brand: "Samsung", price: 40000 },
+    { model: "PhoneC", brand: "Oppo", price: 26000 },
+    { model: "PhoneD", brand: "Nokia", price: 35000 },
+    { model: "PhoneE", brand: "Iphone", price: 105000 },
+    { model: "PhoneF", brand: "HTC", price: 48000 },
+];
+
+const averagePrice=priceAverage(phones);
+console.log('the average price of the phone prices is',parseInt(averagePrice));
